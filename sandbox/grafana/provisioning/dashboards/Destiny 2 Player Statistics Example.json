@@ -1,0 +1,1070 @@
+{
+    "annotations": {
+	"list": [
+	    {
+		"builtIn": 1,
+		"datasource": "-- Grafana --",
+		"enable": true,
+		"hide": true,
+		"iconColor": "rgba(0, 211, 255, 1)",
+		"name": "Annotations & Alerts",
+		"type": "dashboard"
+	    }
+	]
+    },
+    "editable": true,
+    "gnetId": null,
+    "graphTooltip": 0,
+    "id": 1,
+    "iteration": 1598177523028,
+    "links": [],
+    "panels": [
+	{
+	    "datasource": null,
+	    "gridPos": {
+		"h": 1,
+		"w": 24,
+		"x": 0,
+		"y": 0
+	    },
+	    "id": 22,
+	    "title": "Historical Data",
+	    "type": "row"
+	},
+	{
+	    "aliasColors": {},
+	    "bars": false,
+	    "dashLength": 10,
+	    "dashes": false,
+	    "datasource": null,
+	    "fieldConfig": {
+		"defaults": {
+		    "custom": {}
+		},
+		"overrides": []
+	    },
+	    "fill": 1,
+	    "fillGradient": 0,
+	    "gridPos": {
+		"h": 12,
+		"w": 12,
+		"x": 0,
+		"y": 1
+	    },
+	    "hiddenSeries": false,
+	    "id": 18,
+	    "legend": {
+		"alignAsTable": false,
+		"avg": false,
+		"current": false,
+		"hideEmpty": true,
+		"hideZero": true,
+		"max": false,
+		"min": false,
+		"rightSide": false,
+		"show": true,
+		"total": false,
+		"values": false
+	    },
+	    "lines": true,
+	    "linewidth": 2,
+	    "nullPointMode": "null",
+	    "percentage": true,
+	    "pluginVersion": "7.1.3",
+	    "pointradius": 6,
+	    "points": false,
+	    "renderer": "flot",
+	    "seriesOverrides": [],
+	    "spaceLength": 10,
+	    "stack": false,
+	    "steppedLine": true,
+	    "targets": [
+		{
+		    "expr": "(d2_seconds_played{activity_type=~\"$activity\", character=~\"$character\"} / ignoring (character) group_left d2_seconds_played{activity_type=~\"$activity\", character=\"merged\"}) * 100",
+		    "interval": "",
+		    "legendFormat": "{{character}}: {{activity_type}}",
+		    "refId": "A"
+		}
+	    ],
+	    "thresholds": [],
+	    "timeFrom": null,
+	    "timeRegions": [],
+	    "timeShift": null,
+	    "title": "% of time played as $character in $activity",
+	    "tooltip": {
+		"shared": true,
+		"sort": 2,
+		"value_type": "individual"
+	    },
+	    "type": "graph",
+	    "xaxis": {
+		"buckets": null,
+		"mode": "time",
+		"name": null,
+		"show": true,
+		"values": []
+	    },
+	    "yaxes": [
+		{
+		    "format": "short",
+		    "label": "% of time",
+		    "logBase": 1,
+		    "max": null,
+		    "min": null,
+		    "show": true
+		},
+		{
+		    "format": "short",
+		    "label": null,
+		    "logBase": 1,
+		    "max": null,
+		    "min": null,
+		    "show": false
+		}
+	    ],
+	    "yaxis": {
+		"align": false,
+		"alignLevel": null
+	    }
+	},
+	{
+	    "aliasColors": {},
+	    "bars": false,
+	    "dashLength": 10,
+	    "dashes": false,
+	    "datasource": null,
+	    "fieldConfig": {
+		"defaults": {
+		    "custom": {}
+		},
+		"overrides": []
+	    },
+	    "fill": 1,
+	    "fillGradient": 0,
+	    "gridPos": {
+		"h": 12,
+		"w": 12,
+		"x": 12,
+		"y": 1
+	    },
+	    "hiddenSeries": false,
+	    "id": 23,
+	    "legend": {
+		"alignAsTable": false,
+		"avg": false,
+		"current": false,
+		"hideEmpty": true,
+		"hideZero": true,
+		"max": false,
+		"min": false,
+		"rightSide": false,
+		"show": true,
+		"total": false,
+		"values": false
+	    },
+	    "lines": true,
+	    "linewidth": 2,
+	    "nullPointMode": "null",
+	    "percentage": true,
+	    "pluginVersion": "7.1.3",
+	    "pointradius": 6,
+	    "points": false,
+	    "renderer": "flot",
+	    "seriesOverrides": [],
+	    "spaceLength": 10,
+	    "stack": false,
+	    "steppedLine": true,
+	    "targets": [
+		{
+		    "expr": "(d2_total_kills{activity_type=~\"$activity\", character=~\"$character\"} / ignoring (character) group_left d2_total_kills{activity_type=~\"$activity\", character=\"merged\"}) * 100",
+		    "interval": "",
+		    "legendFormat": "{{character}}: {{activity_type}}",
+		    "refId": "A"
+		}
+	    ],
+	    "thresholds": [],
+	    "timeFrom": null,
+	    "timeRegions": [],
+	    "timeShift": null,
+	    "title": "% of all kills as $character in $activity",
+	    "tooltip": {
+		"shared": true,
+		"sort": 2,
+		"value_type": "individual"
+	    },
+	    "type": "graph",
+	    "xaxis": {
+		"buckets": null,
+		"mode": "time",
+		"name": null,
+		"show": true,
+		"values": []
+	    },
+	    "yaxes": [
+		{
+		    "format": "short",
+		    "label": "% of kills",
+		    "logBase": 1,
+		    "max": null,
+		    "min": null,
+		    "show": true
+		},
+		{
+		    "format": "short",
+		    "label": null,
+		    "logBase": 1,
+		    "max": null,
+		    "min": null,
+		    "show": false
+		}
+	    ],
+	    "yaxis": {
+		"align": false,
+		"alignLevel": null
+	    }
+	},
+	{
+	    "collapsed": false,
+	    "datasource": null,
+	    "gridPos": {
+		"h": 1,
+		"w": 24,
+		"x": 0,
+		"y": 13
+	    },
+	    "id": 20,
+	    "panels": [],
+	    "title": "Instant Data",
+	    "type": "row"
+	},
+	{
+	    "datasource": null,
+	    "fieldConfig": {
+		"defaults": {
+		    "custom": {},
+		    "mappings": [],
+		    "thresholds": {
+			"mode": "absolute",
+			"steps": [
+			    {
+				"color": "semi-dark-orange",
+				"value": null
+			    },
+			    {
+				"color": "green",
+				"value": 100
+			    }
+			]
+		    },
+		    "unit": "percent"
+		},
+		"overrides": []
+	    },
+	    "gridPos": {
+		"h": 5,
+		"w": 4,
+		"x": 0,
+		"y": 14
+	    },
+	    "id": 16,
+	    "options": {
+		"orientation": "auto",
+		"reduceOptions": {
+		    "calcs": [
+			"mean"
+		    ],
+		    "fields": "",
+		    "values": false
+		},
+		"showThresholdLabels": false,
+		"showThresholdMarkers": true
+	    },
+	    "pluginVersion": "7.1.3",
+	    "targets": [
+		{
+		    "expr": "round((d2_activities_cleared / d2_activities_entered) * 100)",
+		    "format": "time_series",
+		    "hide": false,
+		    "instant": true,
+		    "interval": "",
+		    "intervalFactor": 1,
+		    "legendFormat": " ",
+		    "refId": "A"
+		}
+	    ],
+	    "timeFrom": null,
+	    "timeShift": null,
+	    "title": "Activity Clear Rate",
+	    "type": "gauge"
+	},
+	{
+	    "datasource": null,
+	    "fieldConfig": {
+		"defaults": {
+		    "custom": {},
+		    "mappings": [],
+		    "thresholds": {
+			"mode": "absolute",
+			"steps": [
+			    {
+				"color": "green",
+				"value": null
+			    },
+			    {
+				"color": "red",
+				"value": 80
+			    }
+			]
+		    }
+		},
+		"overrides": []
+	    },
+	    "gridPos": {
+		"h": 5,
+		"w": 4,
+		"x": 4,
+		"y": 14
+	    },
+	    "id": 7,
+	    "options": {
+		"colorMode": "value",
+		"graphMode": "none",
+		"justifyMode": "center",
+		"orientation": "auto",
+		"reduceOptions": {
+		    "calcs": [
+			"mean"
+		    ],
+		    "fields": "",
+		    "values": false
+		},
+		"textMode": "auto"
+	    },
+	    "pluginVersion": "7.1.3",
+	    "targets": [
+		{
+		    "expr": "d2_total_kills{activity_type=~\"$activity\", character=~\"$character\"}",
+		    "instant": true,
+		    "interval": "",
+		    "legendFormat": "{{character}}",
+		    "refId": "A"
+		}
+	    ],
+	    "timeFrom": null,
+	    "timeShift": null,
+	    "title": "Kills: $activity",
+	    "type": "stat"
+	},
+	{
+	    "datasource": null,
+	    "fieldConfig": {
+		"defaults": {
+		    "custom": {},
+		    "mappings": [],
+		    "thresholds": {
+			"mode": "absolute",
+			"steps": [
+			    {
+				"color": "green",
+				"value": null
+			    },
+			    {
+				"color": "red",
+				"value": 80
+			    }
+			]
+		    }
+		},
+		"overrides": []
+	    },
+	    "gridPos": {
+		"h": 5,
+		"w": 4,
+		"x": 8,
+		"y": 14
+	    },
+	    "id": 14,
+	    "options": {
+		"colorMode": "value",
+		"graphMode": "none",
+		"justifyMode": "center",
+		"orientation": "auto",
+		"reduceOptions": {
+		    "calcs": [
+			"mean"
+		    ],
+		    "fields": "",
+		    "values": false
+		},
+		"textMode": "auto"
+	    },
+	    "pluginVersion": "7.1.3",
+	    "targets": [
+		{
+		    "expr": "d2_precision_kills{activity_type=~\"$activity\", character=~\"$character\"}",
+		    "instant": true,
+		    "interval": "",
+		    "legendFormat": "{{character}}",
+		    "refId": "A"
+		}
+	    ],
+	    "timeFrom": null,
+	    "timeShift": null,
+	    "title": "Precision Kills: $activity",
+	    "type": "stat"
+	},
+	{
+	    "datasource": null,
+	    "fieldConfig": {
+		"defaults": {
+		    "custom": {},
+		    "mappings": [],
+		    "thresholds": {
+			"mode": "absolute",
+			"steps": [
+			    {
+				"color": "green",
+				"value": null
+			    },
+			    {
+				"color": "red",
+				"value": 80
+			    }
+			]
+		    }
+		},
+		"overrides": []
+	    },
+	    "gridPos": {
+		"h": 5,
+		"w": 3,
+		"x": 12,
+		"y": 14
+	    },
+	    "id": 8,
+	    "options": {
+		"colorMode": "value",
+		"graphMode": "none",
+		"justifyMode": "center",
+		"orientation": "auto",
+		"reduceOptions": {
+		    "calcs": [
+			"mean"
+		    ],
+		    "fields": "",
+		    "values": false
+		},
+		"textMode": "auto"
+	    },
+	    "pluginVersion": "7.1.3",
+	    "targets": [
+		{
+		    "expr": "d2_total_deaths{activity_type=~\"$activity\", character=~\"$character\"}",
+		    "instant": true,
+		    "interval": "",
+		    "legendFormat": "{{character}}",
+		    "refId": "A"
+		}
+	    ],
+	    "timeFrom": null,
+	    "timeShift": null,
+	    "title": "Deaths: $activity",
+	    "type": "stat"
+	},
+	{
+	    "datasource": null,
+	    "fieldConfig": {
+		"defaults": {
+		    "custom": {},
+		    "mappings": [],
+		    "thresholds": {
+			"mode": "absolute",
+			"steps": [
+			    {
+				"color": "green",
+				"value": null
+			    },
+			    {
+				"color": "red",
+				"value": 80
+			    }
+			]
+		    }
+		},
+		"overrides": []
+	    },
+	    "gridPos": {
+		"h": 5,
+		"w": 3,
+		"x": 15,
+		"y": 14
+	    },
+	    "id": 9,
+	    "options": {
+		"colorMode": "value",
+		"graphMode": "none",
+		"justifyMode": "center",
+		"orientation": "auto",
+		"reduceOptions": {
+		    "calcs": [
+			"mean"
+		    ],
+		    "fields": "",
+		    "values": false
+		},
+		"textMode": "auto"
+	    },
+	    "pluginVersion": "7.1.3",
+	    "targets": [
+		{
+		    "expr": "d2_suicides{activity_type=~\"$activity\", character=~\"$character\"}",
+		    "instant": true,
+		    "interval": "",
+		    "legendFormat": "{{character}}",
+		    "refId": "A"
+		}
+	    ],
+	    "timeFrom": null,
+	    "timeShift": null,
+	    "title": "Suicides: $activity",
+	    "type": "stat"
+	},
+	{
+	    "datasource": null,
+	    "fieldConfig": {
+		"defaults": {
+		    "custom": {},
+		    "mappings": [],
+		    "thresholds": {
+			"mode": "absolute",
+			"steps": [
+			    {
+				"color": "green",
+				"value": null
+			    },
+			    {
+				"color": "red",
+				"value": 80
+			    }
+			]
+		    }
+		},
+		"overrides": []
+	    },
+	    "gridPos": {
+		"h": 5,
+		"w": 3,
+		"x": 0,
+		"y": 19
+	    },
+	    "id": 10,
+	    "options": {
+		"colorMode": "value",
+		"graphMode": "none",
+		"justifyMode": "center",
+		"orientation": "auto",
+		"reduceOptions": {
+		    "calcs": [
+			"mean"
+		    ],
+		    "fields": "",
+		    "values": false
+		},
+		"textMode": "auto"
+	    },
+	    "pluginVersion": "7.1.3",
+	    "targets": [
+		{
+		    "expr": "d2_resurrections{activity_type=~\"$activity\", character=~\"$character\", action=\"performed\"}",
+		    "instant": true,
+		    "interval": "",
+		    "legendFormat": "{{character}}",
+		    "refId": "A"
+		}
+	    ],
+	    "timeFrom": null,
+	    "timeShift": null,
+	    "title": "Ressurections Performed: $activity",
+	    "type": "stat"
+	},
+	{
+	    "datasource": null,
+	    "fieldConfig": {
+		"defaults": {
+		    "custom": {},
+		    "mappings": [],
+		    "thresholds": {
+			"mode": "absolute",
+			"steps": [
+			    {
+				"color": "green",
+				"value": null
+			    },
+			    {
+				"color": "red",
+				"value": 80
+			    }
+			]
+		    }
+		},
+		"overrides": []
+	    },
+	    "gridPos": {
+		"h": 5,
+		"w": 3,
+		"x": 3,
+		"y": 19
+	    },
+	    "id": 11,
+	    "options": {
+		"colorMode": "value",
+		"graphMode": "none",
+		"justifyMode": "center",
+		"orientation": "auto",
+		"reduceOptions": {
+		    "calcs": [
+			"mean"
+		    ],
+		    "fields": "",
+		    "values": false
+		},
+		"textMode": "auto"
+	    },
+	    "pluginVersion": "7.1.3",
+	    "targets": [
+		{
+		    "expr": "d2_resurrections{activity_type=~\"$activity\", character=~\"$character\", action=\"received\"}",
+		    "instant": true,
+		    "interval": "",
+		    "legendFormat": "{{character}}",
+		    "refId": "A"
+		}
+	    ],
+	    "timeFrom": null,
+	    "timeShift": null,
+	    "title": "Ressurections Received: $activity",
+	    "type": "stat"
+	},
+	{
+	    "datasource": null,
+	    "fieldConfig": {
+		"defaults": {
+		    "custom": {},
+		    "mappings": [],
+		    "thresholds": {
+			"mode": "absolute",
+			"steps": [
+			    {
+				"color": "green",
+				"value": null
+			    },
+			    {
+				"color": "red",
+				"value": 80
+			    }
+			]
+		    }
+		},
+		"overrides": []
+	    },
+	    "gridPos": {
+		"h": 5,
+		"w": 3,
+		"x": 6,
+		"y": 19
+	    },
+	    "id": 12,
+	    "options": {
+		"colorMode": "value",
+		"graphMode": "none",
+		"justifyMode": "center",
+		"orientation": "auto",
+		"reduceOptions": {
+		    "calcs": [
+			"mean"
+		    ],
+		    "fields": "",
+		    "values": false
+		},
+		"textMode": "auto"
+	    },
+	    "pluginVersion": "7.1.3",
+	    "targets": [
+		{
+		    "expr": "d2_orbs{activity_type=~\"$activity\", character=~\"$character\", action=\"dropped\"}",
+		    "instant": true,
+		    "interval": "",
+		    "legendFormat": "{{character}}",
+		    "refId": "A"
+		}
+	    ],
+	    "timeFrom": null,
+	    "timeShift": null,
+	    "title": "Orbs Dropped: $activity",
+	    "type": "stat"
+	},
+	{
+	    "datasource": null,
+	    "fieldConfig": {
+		"defaults": {
+		    "custom": {},
+		    "mappings": [],
+		    "thresholds": {
+			"mode": "absolute",
+			"steps": [
+			    {
+				"color": "green",
+				"value": null
+			    },
+			    {
+				"color": "red",
+				"value": 80
+			    }
+			]
+		    }
+		},
+		"overrides": []
+	    },
+	    "gridPos": {
+		"h": 5,
+		"w": 3,
+		"x": 9,
+		"y": 19
+	    },
+	    "id": 13,
+	    "options": {
+		"colorMode": "value",
+		"graphMode": "none",
+		"justifyMode": "center",
+		"orientation": "auto",
+		"reduceOptions": {
+		    "calcs": [
+			"mean"
+		    ],
+		    "fields": "",
+		    "values": false
+		},
+		"textMode": "auto"
+	    },
+	    "pluginVersion": "7.1.3",
+	    "targets": [
+		{
+		    "expr": "d2_orbs{activity_type=~\"$activity\", character=~\"$character\", action=\"gathered\"}",
+		    "instant": true,
+		    "interval": "",
+		    "legendFormat": "{{character}}",
+		    "refId": "A"
+		}
+	    ],
+	    "timeFrom": null,
+	    "timeShift": null,
+	    "title": "Orbs Gathered: $activity",
+	    "type": "stat"
+	},
+	{
+	    "datasource": null,
+	    "fieldConfig": {
+		"defaults": {
+		    "custom": {
+			"align": null
+		    },
+		    "mappings": [],
+		    "thresholds": {
+			"mode": "absolute",
+			"steps": [
+			    {
+				"color": "green",
+				"value": null
+			    },
+			    {
+				"color": "red",
+				"value": 80
+			    }
+			]
+		    }
+		},
+		"overrides": []
+	    },
+	    "gridPos": {
+		"h": 5,
+		"w": 3,
+		"x": 12,
+		"y": 19
+	    },
+	    "id": 4,
+	    "options": {
+		"colorMode": "value",
+		"graphMode": "area",
+		"justifyMode": "center",
+		"orientation": "auto",
+		"reduceOptions": {
+		    "calcs": [
+			"mean"
+		    ],
+		    "fields": "",
+		    "values": false
+		},
+		"textMode": "auto"
+	    },
+	    "pluginVersion": "7.1.3",
+	    "targets": [
+		{
+		    "expr": "d2_kd{activity_type=~\"$activity\", character=~\"$character\"}",
+		    "format": "time_series",
+		    "instant": false,
+		    "interval": "",
+		    "intervalFactor": 1,
+		    "legendFormat": "{{character}}",
+		    "refId": "A"
+		}
+	    ],
+	    "timeFrom": null,
+	    "timeShift": null,
+	    "title": "K/D Ratio: $activity",
+	    "type": "stat"
+	},
+	{
+	    "datasource": null,
+	    "fieldConfig": {
+		"defaults": {
+		    "custom": {
+			"align": null
+		    },
+		    "mappings": [],
+		    "thresholds": {
+			"mode": "absolute",
+			"steps": [
+			    {
+				"color": "green",
+				"value": null
+			    },
+			    {
+				"color": "red",
+				"value": 80
+			    }
+			]
+		    }
+		},
+		"overrides": []
+	    },
+	    "gridPos": {
+		"h": 5,
+		"w": 3,
+		"x": 15,
+		"y": 19
+	    },
+	    "id": 5,
+	    "options": {
+		"colorMode": "value",
+		"graphMode": "area",
+		"justifyMode": "center",
+		"orientation": "auto",
+		"reduceOptions": {
+		    "calcs": [
+			"mean"
+		    ],
+		    "fields": "",
+		    "values": false
+		},
+		"textMode": "auto"
+	    },
+	    "pluginVersion": "7.1.3",
+	    "targets": [
+		{
+		    "expr": "d2_kda{activity_type=~\"$activity\", character=~\"$character\"}",
+		    "format": "time_series",
+		    "instant": false,
+		    "interval": "",
+		    "intervalFactor": 1,
+		    "legendFormat": "{{character}}",
+		    "refId": "A"
+		}
+	    ],
+	    "timeFrom": null,
+	    "timeShift": null,
+	    "title": "K/D/A Ratio: $activity",
+	    "type": "stat"
+	},
+	{
+	    "datasource": null,
+	    "description": "Shows the trend of kills by weapon over time",
+	    "fieldConfig": {
+		"defaults": {
+		    "custom": {},
+		    "mappings": [],
+		    "thresholds": {
+			"mode": "absolute",
+			"steps": [
+			    {
+				"color": "green",
+				"value": null
+			    },
+			    {
+				"color": "red",
+				"value": 80
+			    }
+			]
+		    }
+		},
+		"overrides": []
+	    },
+	    "gridPos": {
+		"h": 14,
+		"w": 24,
+		"x": 0,
+		"y": 24
+	    },
+	    "id": 2,
+	    "options": {
+		"displayMode": "gradient",
+		"orientation": "vertical",
+		"reduceOptions": {
+		    "calcs": [
+			"mean"
+		    ],
+		    "fields": "",
+		    "values": false
+		},
+		"showUnfilled": true
+	    },
+	    "pluginVersion": "7.1.3",
+	    "repeat": null,
+	    "targets": [
+		{
+		    "expr": "d2_kills_with{character=~\"$character\", weapon=~\"$weapon\", activity_type=~\"$activity\"}",
+		    "interval": "",
+		    "legendFormat": "{{weapon}}",
+		    "refId": "A"
+		}
+	    ],
+	    "timeFrom": null,
+	    "timeShift": null,
+	    "title": "Kills With $weapon in $activity for $character",
+	    "type": "bargauge"
+	}
+    ],
+    "refresh": false,
+    "schemaVersion": 26,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+	"list": [
+	    {
+		"allValue": "hunter|titan|warlock",
+		"current": {
+		    "selected": true,
+		    "text": "hunter",
+		    "value": "hunter"
+		},
+		"datasource": "Prometheus",
+		"definition": "label_values(d2_kills_with,character)",
+		"hide": 0,
+		"includeAll": true,
+		"label": "character",
+		"multi": false,
+		"name": "character",
+		"options": [],
+		"query": "label_values(d2_kills_with,character)",
+		"refresh": 1,
+		"regex": "",
+		"skipUrlSync": false,
+		"sort": 1,
+		"tagValuesQuery": "",
+		"tags": [],
+		"tagsQuery": "",
+		"type": "query",
+		"useTags": false
+	    },
+	    {
+		"allValue": ".*",
+		"current": {
+		    "selected": true,
+		    "text": "All",
+		    "value": "$__all"
+		},
+		"datasource": "Prometheus",
+		"definition": "label_values(d2_kills_with,weapon)",
+		"hide": 0,
+		"includeAll": true,
+		"label": "weapon",
+		"multi": false,
+		"name": "weapon",
+		"options": [],
+		"query": "label_values(d2_kills_with,weapon)",
+		"refresh": 1,
+		"regex": "",
+		"skipUrlSync": false,
+		"sort": 1,
+		"tagValuesQuery": "",
+		"tags": [],
+		"tagsQuery": "",
+		"type": "query",
+		"useTags": false
+	    },
+	    {
+		"allValue": ".*",
+		"current": {
+		    "selected": false,
+		    "text": "pvp",
+		    "value": "pvp"
+		},
+		"datasource": "Prometheus",
+		"definition": "label_values(d2_kills_with,activity_type)",
+		"hide": 0,
+		"includeAll": true,
+		"label": "activity",
+		"multi": false,
+		"name": "activity",
+		"options": [
+		    {
+			"selected": false,
+			"text": "All",
+			"value": "$__all"
+		    },
+		    {
+			"selected": false,
+			"text": "pve",
+			"value": "pve"
+		    },
+		    {
+			"selected": true,
+			"text": "pvp",
+			"value": "pvp"
+		    }
+		],
+		"query": "label_values(d2_kills_with,activity_type)",
+		"refresh": 0,
+		"regex": "",
+		"skipUrlSync": false,
+		"sort": 1,
+		"tagValuesQuery": "",
+		"tags": [],
+		"tagsQuery": "",
+		"type": "query",
+		"useTags": false
+	    }
+	]
+    },
+    "time": {
+	"from": "now-6h",
+	"to": "now"
+    },
+    "timepicker": {
+	"refresh_intervals": [
+	    "5s",
+	    "10s",
+	    "30s",
+	    "1m",
+	    "5m",
+	    "15m",
+	    "30m",
+	    "1h",
+	    "2h",
+	    "1d"
+	]
+    },
+    "timezone": "",
+    "title": "Destiny 2 Player Statistics Example",
+    "uid": "_1oLHLIMz",
+    "version": 1
+}
